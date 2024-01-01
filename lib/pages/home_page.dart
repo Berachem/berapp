@@ -8,16 +8,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Accueil'),
+      
+      body: Center(
+        child: Text('Berachem ', style: Theme.of(context).textTheme.headlineMedium ),
       ),
-      body: /* const WebView(
-        initialUrl: 'https://flutter.io',
-        javascriptMode: JavascriptMode.unrestricted,
-      ), */  Center(
-        child: Text('Accueil', style: Theme.of(context).textTheme.headlineMedium ),
-      ),
-      bottomNavigationBar: const BottomAppBarCustom(),
+      bottomNavigationBar: BottomAppBarCustom(selectedIndex: 0),
     );
   }
 }

@@ -38,6 +38,7 @@ dependencies:
   http: ^1.1.0
   video_player: ^2.7.2
   webview_flutter: ^4.4.2
+  salomon_bottom_bar: ^3.3.2
 
 dev_dependencies:
   flutter_test:

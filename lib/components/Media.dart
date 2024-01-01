@@ -3,8 +3,10 @@ import 'package:video_player/video_player.dart';
 
 class MediaWidget extends StatefulWidget {
   final String mediaLink;
+  final int? width;
 
-  const MediaWidget({Key? key, required this.mediaLink}) : super(key: key);
+  const MediaWidget({Key? key, required this.mediaLink, this.width})
+      : super(key: key);
 
   @override
   _MediaWidgetState createState() => _MediaWidgetState();
@@ -27,18 +29,20 @@ class _MediaWidgetState extends State<MediaWidget> {
   @override
   Widget build(BuildContext context) {
     if (widget.mediaLink.contains('.mp4')) {
-      return _controller.value.isInitialized
-          ? AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: VideoPlayer(_controller),
+         return _controller.value.isInitialized
+          ? Container(
+              width: widget.width != null ? widget.width!.toDouble() : null,
+              child: AspectRatio(
+                aspectRatio: _controller.value.aspectRatio,
+                child: VideoPlayer(_controller),
+              ),
             )
           : Container();
     } else {
       return Image.network(
         widget.mediaLink,
-        width: double.infinity,
-        height: 200,
-        fit: BoxFit.cover,
+        fit : BoxFit.cover,
+        width: widget.width != null ? widget.width!.toDouble() : null,
       );
     }
   }

@@ -24,6 +24,11 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 87, 137, 231),
         ),
         textTheme:  const TextTheme(
+          headlineLarge: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
           headlineMedium: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.normal,
